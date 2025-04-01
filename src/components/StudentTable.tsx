@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { showErrorToast, showSuccessToast } from "../utils/toast";
 import { Student } from "../types/student";
+import { MdDelete } from "react-icons/md";
+import { FaEye, FaRegEdit } from "react-icons/fa";
 
 const fetchData = async (endpoint: string) => {
   return await fetch(`http://localhost:9000/${endpoint}`).then((res) =>
@@ -65,15 +67,15 @@ export default function StudentTable() {
                     <td>{name}</td>
                     <td>{place}</td>
                     <td>{phone}</td>
-                    <td className="*:px-2 *:py-1 *:mx-1  *:rounded text-white">
+                    <td className="*:px-2 *:py-1 *:mx-1  *:rounded text-white flex justify-center items-center">
                       <Link to={`/student/${id}`} className="bg-slate-400">
-                        View
+                        <FaEye />
                       </Link>
                       <Link to={`/student/${id}`} className="bg-purple-400">
-                        Edit
+                        <FaRegEdit />
                       </Link>
                       <Link to={`/student/${id}`} className="bg-red-400">
-                        Delete
+                        <MdDelete />
                       </Link>
                     </td>
                   </tr>
