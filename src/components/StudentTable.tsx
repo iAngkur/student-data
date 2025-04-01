@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { showErrorToast, showSuccessToast } from "../utils/toast";
 import { Student } from "../types/student";
 import { MdDelete } from "react-icons/md";
@@ -13,6 +13,8 @@ const fetchData = async (endpoint: string) => {
 
 export default function StudentTable() {
   const [students, setStudents] = useState<Student[]>([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchStudents() {
@@ -35,6 +37,21 @@ export default function StudentTable() {
 
     fetchStudents();
   }, []);
+
+  const deleteStudent = (studentid: string) => {
+    if (window.confirm("Are you sure you want to delete?")) {
+      fetch(`http://localhost:9000/students/${studentid}`, {
+        method: "DELETE",
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to remove student data!");
+
+          showSuccessToast("Data removed successfully!");
+          navigate("/");
+        })
+        .catch((err) => showErrorToast(err.message));
+    }
+  };
 
   return (
     <div className="w-xl lg:w-3xl shadow-md mt-5 mx-auto p-5 border-t-5 border-purple-800 rounded-xl">
@@ -77,9 +94,12 @@ export default function StudentTable() {
                       >
                         <FaRegEdit />
                       </Link>
-                      <Link to={`/student/${id}`} className="bg-red-400">
+                      <button
+                        onClick={() => deleteStudent(id)}
+                        className="bg-red-400 cursor-pointer"
+                      >
                         <MdDelete />
-                      </Link>
+                      </button>
                     </td>
                   </tr>
                 ))}
