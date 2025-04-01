@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { showErrorToast, showSuccessToast } from "../utils/toast";
+import { Student } from "../types/student";
 
 const fetchData = async (endpoint: string) => {
   return await fetch(`http://localhost:9000/${endpoint}`).then((res) =>
     res.json()
   );
-};
-
-type Student = {
-  id: number;
-  name: string;
-  place: string;
-  phone: string;
 };
 
 export default function StudentTable() {
