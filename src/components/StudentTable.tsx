@@ -68,10 +68,13 @@ export default function StudentTable() {
                     <td>{place}</td>
                     <td>{phone}</td>
                     <td className="*:px-2 *:py-1 *:mx-1  *:rounded text-white flex justify-center items-center">
-                      <Link to={`/student/${id}`} className="bg-slate-400">
+                      <Link to={`/student/view/${id}`} className="bg-slate-400">
                         <FaEye />
                       </Link>
-                      <Link to={`/student/${id}`} className="bg-purple-400">
+                      <Link
+                        to={`/student/edit/${id}`}
+                        className="bg-purple-400"
+                      >
                         <FaRegEdit />
                       </Link>
                       <Link to={`/student/${id}`} className="bg-red-400">
