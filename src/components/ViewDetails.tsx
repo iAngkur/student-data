@@ -16,7 +16,7 @@ export default function ViewDetails() {
           throw new Error("No students found in Database!");
 
         const foundStudent: Student | undefined = data.find(
-          (student: Student) => student.id === Number(studentid)
+          (student: Student) => student.id === studentid
         );
         setStudent(foundStudent);
       })

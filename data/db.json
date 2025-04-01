@@ -1,19 +1,19 @@
 {
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Abul",
       "place": "Dhaka",
       "phone": "01934487492"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Babul",
-      "place": "Khulna",
+      "place": "Khuln",
       "phone": "01974236145"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Dabul",
       "place": "Khulna",
       "phone": "01571523644"
