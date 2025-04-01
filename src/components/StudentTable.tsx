@@ -35,7 +35,7 @@ export default function StudentTable() {
   }, []);
 
   return (
-    <div className="w-3xl shadow-md mt-5 mx-auto p-5 border-t-5 border-purple-800 rounded-xl">
+    <div className="w-xl lg:w-3xl shadow-md mt-5 mx-auto p-5 border-t-5 border-purple-800 rounded-xl">
       <h2 className="text-center mb-5 text-purple-800 text-2xl font-bold">
         Student Records
       </h2>
