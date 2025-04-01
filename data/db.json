@@ -11,7 +11,12 @@
       "name": "Babul",
       "place": "Khulna",
       "phone": "01974236145"
+    },
+    {
+      "id": 3,
+      "name": "Dabul",
+      "place": "Khulna",
+      "phone": "01571523644"
     }
-
   ]
 }
