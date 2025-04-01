@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+
+/* Custom toast styles */
+.Toastify__toast {
+  font-family: 'Your-Font', sans-serif;
+  border-radius: 8px;
+}
+
+.Toastify__toast--success {
+  background: #4caf50;
+}
+
+.Toastify__toast--error {
+  background: #f44336;
+}
+
+.Toastify__progress-bar {
+  height: 3px;
+}
