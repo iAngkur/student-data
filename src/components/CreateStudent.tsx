@@ -22,7 +22,7 @@ export default function CreateStudent() {
       return;
     }
 
-    const newStudent = { id, name, place, phone };
+    const newStudent = { id: Number(id), name, place, phone };
 
     fetch("http://localhost:9000/students", {
       method: "POST",
